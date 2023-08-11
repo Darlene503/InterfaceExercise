@@ -1,32 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace InterfaceExercise
-{
+namespace InterfaceExercise;
+
     class Program
     {
-        static void Main(string[] args)
-        {
-            var Car = new Car();
+    static void Main(string[] args)
+    {
+        var car = new Car();
 
-            var Truck = new Truck();
+        var truck =  new Truck();
 
-            var Suv = new Suv();
+        var suv = new Suv();
 
-            var Ivehicles = new List<Ivehicle>() { Car, Truck, Suv };
-
-            foreach (var vehicle in Ivehicles)
+        var IVehicles = new List<IVehicle>() { car, truck, suv };
+               
+            foreach (var vehicle in IVehicles)
             {
-                vehicle.Drive();
-                vehicle.ChangeGears(true);
-                vehicle.Reverse();
-
+            vehicle.Drive();
+            vehicle.ChangeGears(true);
+            vehicle.Reverse();
             }
-
-
         }
 
 
     }
 
-}
+
+

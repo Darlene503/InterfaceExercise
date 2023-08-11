@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace InterfaceExercise
 {
-    public interface Ivehicle
+    public interface IVehicle
     {
-        public class  Ivehicle
-        {
-
-        }
+        
 
 
         public double EngineSize { get; set; }

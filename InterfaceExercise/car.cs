@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceExercise
 {
-    public  class Car : Ivehicle, Icompany
+    public  class Car : IVehicle, ICompany
     {
         public Car()
         {
@@ -19,7 +19,7 @@ namespace InterfaceExercise
         public int SeatCount { get; set; } = 4;
         public string CompanyName { get; set; } = "VolksWagon";
         public string Motto { get; set; } = "Think Small";
-        public bool HasChangedGears { get; set; }
+        public bool ChangedGears { get; set; }
 
         public void Drive()
         {
@@ -28,10 +28,10 @@ namespace InterfaceExercise
 
         public void Reverse()
         {
-            if (HasChangedGears == true)
+            if (ChangedGears == true)
             {
                 Console.WriteLine($"{GetType().Name}now driving forward. . .");
-                HasChangedGears = false;
+                ChangedGears = false;
             }
             else
             {
@@ -43,10 +43,10 @@ namespace InterfaceExercise
 
         public void Park()
         {
-            if (HasChangedGears == true)
+            if (ChangedGears == true)
             {
                 Console.WriteLine($"{GetType().Name} is now in park. . .");
-                HasChangedGears = false;
+                ChangedGears = false;
             }
             else
             {
@@ -56,7 +56,7 @@ namespace InterfaceExercise
         }
         public void ChangeGears(bool isChanged)
         {
-            HasChangedGears = isChanged; 
+            ChangedGears = isChanged; 
         }
 
     }

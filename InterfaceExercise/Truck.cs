@@ -6,11 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace InterfaceExercise
-{
-    public interface Truck : Ivehicle, Icompany
-    {
+{   
 
-        public class Truck
+        public class Truck : IVehicle, ICompany
         {
 
 
@@ -23,7 +21,7 @@ namespace InterfaceExercise
             public int SeatCount { get; set; } = 4;
             public string CompanyName { get; set; } = "Ford";
             public string Motto { get; set; } = "Like a Rock";
-            public bool ChangeGears { get; set; }
+            public bool ChangedGears { get; set; }
             public bool HasFourWheelDrive { get; set; } = true;
 
             public void Drive()
@@ -48,10 +46,10 @@ namespace InterfaceExercise
 
 
 
-                if (ChangeGears == true)
+                if (ChangedGears)
                 {
                     Console.WriteLine($"{GetType().Name}now driving forward. . .");
-                    ChangeGears = false;
+                    ChangedGears = false;
                 }
                 else
                 {
@@ -64,10 +62,10 @@ namespace InterfaceExercise
             {
 
 
-                if (ChangeGears == true)
+                if (ChangedGears == true)
                 {
                     Console.WriteLine($"{GetType().Name} is now in park. . .");
-                    ChangeGears = false;
+                    ChangedGears = false;
                 }
                 else
                 {
@@ -76,14 +74,14 @@ namespace InterfaceExercise
 
 
             }
-            public void ChangedGears(bool isChanged)
+            public void ChangeGears(bool isChanged)
             {
 
-                ChangeGears = isChanged;
+                ChangedGears = isChanged;
             }  
 
         }
-    }
+    
           
 }
 

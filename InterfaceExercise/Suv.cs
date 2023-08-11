@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace InterfaceExercise
 {
-    public interface Suv : Ivehicle, Icompany
-    {
+  
 
 
-        public class Suv
+        public class Suv : IVehicle, ICompany
         {
 
 
@@ -23,8 +22,9 @@ namespace InterfaceExercise
             public string Motto { get; set; } = "The ultimate driving machine";
             public bool HasChangedGears { get; set; }
             public bool HasFourWheelDrive { get; set; } = true;
+            public bool ChangedGears { get; set; }
 
-            public void Drive()
+        public void Drive()
 
             {
                 if (HasFourWheelDrive == true)
@@ -75,5 +75,5 @@ namespace InterfaceExercise
             }
         }
 
-    }
+    
 }
