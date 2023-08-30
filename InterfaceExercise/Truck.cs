@@ -21,7 +21,7 @@ namespace InterfaceExercise
             public int SeatCount { get; set; } = 4;
             public string CompanyName { get; set; } = "Ford";
             public string Motto { get; set; } = "Like a Rock";
-            public bool ChangedGears { get; set; }
+            public bool HasChangedGears { get; set; }
             public bool HasFourWheelDrive { get; set; } = true;
 
             public void Drive()
@@ -46,10 +46,10 @@ namespace InterfaceExercise
 
 
 
-                if (ChangedGears)
+                if (HasChangedGears == true)
                 {
-                    Console.WriteLine($"{GetType().Name}now driving forward. . .");
-                    ChangedGears = false;
+                    Console.WriteLine($"{GetType().Name} now reversing. . .");
+                    HasChangedGears = false;
                 }
                 else
                 {
@@ -62,10 +62,10 @@ namespace InterfaceExercise
             {
 
 
-                if (ChangedGears == true)
+                if (HasChangedGears == true)
                 {
                     Console.WriteLine($"{GetType().Name} is now in park. . .");
-                    ChangedGears = false;
+                    HasChangedGears = false;
                 }
                 else
                 {
@@ -74,10 +74,10 @@ namespace InterfaceExercise
 
 
             }
-            public void ChangeGears(bool isChanged)
+            public void ChangedGears(bool isChanged)
             {
 
-                ChangedGears = isChanged;
+                HasChangedGears = isChanged;
             }  
 
         }

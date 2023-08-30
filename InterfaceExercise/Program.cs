@@ -18,7 +18,7 @@ namespace InterfaceExercise;
             foreach (var vehicle in IVehicles)
             {
             vehicle.Drive();
-            vehicle.ChangeGears(true);
+            vehicle.ChangedGears(true);
             vehicle.Reverse();
             }
         }

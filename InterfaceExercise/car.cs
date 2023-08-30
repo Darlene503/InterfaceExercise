@@ -19,19 +19,19 @@ namespace InterfaceExercise
         public int SeatCount { get; set; } = 4;
         public string CompanyName { get; set; } = "VolksWagon";
         public string Motto { get; set; } = "Think Small";
-        public bool ChangedGears { get; set; }
+        public bool HasChangedGears { get; set; }
 
         public void Drive()
         {
-        Console.WriteLine($"{GetType().Name}now driving forward. . .");
+        Console.WriteLine($"{GetType().Name} now driving forward. . .");
         }
 
         public void Reverse()
         {
-            if (ChangedGears == true)
+            if (HasChangedGears == true)
             {
-                Console.WriteLine($"{GetType().Name}now driving forward. . .");
-                ChangedGears = false;
+                Console.WriteLine($"{GetType().Name} now reversing . . .");
+                HasChangedGears = false;
             }
             else
             {
@@ -43,10 +43,10 @@ namespace InterfaceExercise
 
         public void Park()
         {
-            if (ChangedGears == true)
+            if (HasChangedGears == true)
             {
                 Console.WriteLine($"{GetType().Name} is now in park. . .");
-                ChangedGears = false;
+                HasChangedGears = false;
             }
             else
             {
@@ -56,9 +56,13 @@ namespace InterfaceExercise
         }
         public void ChangeGears(bool isChanged)
         {
-            ChangedGears = isChanged; 
+            HasChangedGears = isChanged; 
         }
 
+        public void ChangedGears(bool isChanged)
+        {
+            HasChangedGears = isChanged;
+        }
     }
 
 
